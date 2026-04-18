@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react"
 import LoginButton from "./components/LoginButton"
 import LogoutButton from "./components/LogoutButton"
+import Profile from "./components/Profile"
 
 export default function App() {
   const { isAuthenticated, isLoading } = useAuth0()
@@ -15,7 +16,10 @@ export default function App() {
       {isAuthenticated && <LogoutButton />}
 
       {isAuthenticated && (
-        <p>You are logged in! User info will appear here soon.</p>
+        <>
+          <p>You are logged in!</p>
+          <Profile />
+        </>
       )}
     </div>
   )
